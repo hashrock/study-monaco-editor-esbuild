@@ -1,0 +1,10 @@
+{
+	"name": "helloworld",
+	"scripts": {
+		"build": "node ./build.js"
+	},
+	"dependencies": {
+		"esbuild": "^0.20.2",
+		"monaco-editor": "^0.48.0"
+	}
+}
