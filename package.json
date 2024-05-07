@@ -1,10 +1,11 @@
 {
-	"name": "helloworld",
-	"scripts": {
-		"build": "node ./build.js"
-	},
-	"dependencies": {
-		"esbuild": "^0.20.2",
-		"monaco-editor": "^0.48.0"
-	}
+  "name": "helloworld",
+  "scripts": {
+    "build": "node ./build.js",
+    "types": "deno types > ./dist/deno.d.ts"
+  },
+  "dependencies": {
+    "esbuild": "^0.20.2",
+    "monaco-editor": "^0.48.0"
+  }
 }

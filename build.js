@@ -80,7 +80,7 @@ function removeDir(_dirPath, keep) {
     for (const entry of entries) {
       const filePath = path.join(dirPath, entry);
       const relativeFilePath = path.join(relativeDirPath, entry);
-      if (keep(relativeFilePath)) {
+      if (keep && keep(relativeFilePath)) {
         keepsFiles = true;
         continue;
       }
