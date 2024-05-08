@@ -18,16 +18,16 @@ self.MonacoEnvironment = {
   },
 };
 
-monaco.languages.typescript.typescriptDefaults.addExtraLib(
-  [
-    "declare function z(): void;",
-    "declare function require(module: string): any;",
-    "declare var module: { exports: any };",
-  ].join("\n"),
-  "filename.d.ts",
-);
+fetch("./deno.d.ts").then((res) => res.text()).then((denoTypes) => {
+  console.log(denoTypes);
 
-monaco.editor.create(document.getElementById("container"), {
-  value: ["function x() {", '\tconsole.log("Hello world!");', "}"].join("\n"),
-  language: "typescript",
+  monaco.languages.typescript.typescriptDefaults.addExtraLib(
+    denoTypes,
+    "deno.d.ts",
+  );
+
+  monaco.editor.create(document.getElementById("container"), {
+    value: ["function x() {", '\tconsole.log("Hello world!");', "}"].join("\n"),
+    language: "typescript",
+  });
 });

@@ -24,6 +24,7 @@ build({
     `node_modules/monaco-editor/esm/${entry}`
   ),
   bundle: true,
+  minify: true,
   format: "iife",
   outbase: "node_modules/monaco-editor/esm/",
   outdir: path.join(__dirname, "dist"),
@@ -31,6 +32,7 @@ build({
 
 build({
   entryPoints: ["index.js"],
+  minify: true,
   bundle: true,
   format: "iife",
   outdir: path.join(__dirname, "dist"),
