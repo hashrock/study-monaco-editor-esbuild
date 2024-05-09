@@ -31,15 +31,26 @@ build({
 });
 
 build({
-  entryPoints: ["index.js"],
+  entryPoints: ["node_modules/monaco-editor/esm/vs/editor/editor.main.js"],
   minify: true,
   bundle: true,
-  format: "iife",
+  format: "esm",
   outdir: path.join(__dirname, "dist"),
   loader: {
     ".ttf": "file",
   },
 });
+
+// build({
+//   entryPoints: ["index.js"],
+//   minify: true,
+//   bundle: true,
+//   format: "iife",
+//   outdir: path.join(__dirname, "dist"),
+//   loader: {
+//     ".ttf": "file",
+//   },
+// });
 
 /**
  * @param {import ('esbuild').BuildOptions} opts
